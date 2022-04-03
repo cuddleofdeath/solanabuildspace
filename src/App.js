@@ -10,7 +10,8 @@ import kp from './keypair.json';
 import { AiOutlineSmile } from 'react-icons/ai';
 
 // SystemProgram is a reference to the Solana runtime!
-const { SystemProgram } = web3;
+// eslint-disable-next-line
+const { SystemProgram, Keypair } = web3;
 
 // Create a keypair for the account that will hold the GIF data.
 const arr = Object.values(kp._keypair.secretKey);
@@ -230,8 +231,8 @@ const App = () => {
     if (walletAddress) {
       console.log('Fetching GIF list...');
       getGifList();
-    }
-  }, []);
+    } // eslint-disable-next-line
+  }, [walletAddress]);
 
   return (
     <div className='App'>
